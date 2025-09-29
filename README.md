@@ -41,10 +41,50 @@ git clone https://github.com/yourusername/job-portal.git
 cd job-portal
 
 2️⃣ Backend Setup
-cd backend
-npm install
+U should have Java 21 installed on your systems.
+Run it on browser : localhost:8082 (Most good results in Chrome) Or u can use the server of ur choice
 # Setup environment variables in .env file
-npm start
+Make the application.properties file and add the server details and following details : this template can be used directly
+
+#Template
+
+spring.application.name=jobportal
+
+# Database Connection
+spring.datasource.url=jdbc:mysql://localhost:3306/zidio?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+spring.datasource.username=ur database name 
+spring.datasource.password= ur database password
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+# JPA / Hibernate
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect
+
+# Server
+server.port= Port of ur choice
+
+# JWT
+spring.jwt.secret=zidioSecretKey
+spring.jwt.expiration=86400000
+
+#Email
+spring.mail.host=smtp.gmail.com
+spring.mail.port=587
+spring.mail.username=your-email@gmail.com
+spring.mail.password=your-app-password
+spring.mail.properties.mail.smtp.auth=true
+spring.mail.properties.mail.smtp.starttls.enable=true
+
+#Cloudinary
+cloudinary.cloud_name=YOUR_CLOUD_NAME
+cloudinary.api_key=YOUR_API_KEY
+cloudinary.api_secret=YOUR_API_SECRET
+
+#FileUpload
+spring.servlet.multipart.max-file-size=5MB
+spring.servlet.multipart.max-request-size=5MB
+
 
 NOTE : It's a backend code only , Frontend layout can be of your choice and i am eager in taking contributions for frontend from u all to make my project interactive. 
 
